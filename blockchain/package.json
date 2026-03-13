@@ -1,16 +1,14 @@
 {
-  \"name\": \"lms-blockchain\",
-  \"version\": \"1.0.0\",
-  \"description\": \"Soulbound NFT certs for LMS\",
-  \"scripts\": {
-    \"compile\": \"hardhat compile\",
-    \"deploy:mumbai\": \"hardhat run scripts/deploy.js --network mumbai\"
+  "name": "lms-blockchain",
+  "version": "1.0.0",
+  "description": "Soulbound NFT certs for LMS (Foundry)",
+  "scripts": {
+    "forge:install": "forge install",
+    "forge:build": "forge build",
+    "forge:test": "forge test",
+    "forge:deploy": "forge script script/CertNFT.s.sol:DeployCertNFT --rpc-url $MUMBAI_RPC_URL --private-key $PRIVATE_KEY --broadcast"
   },
-  \"devDependencies\": {
-    \"@nomicfoundation/hardhat-toolbox\": \"^5.0.0\",
-    \"hardhat\": \"^2.22.2\"
-  },
-  \"dependencies\": {
-    \"@openzeppelin/contracts\": \"^5.0.0\"
+  "devDependencies": {
+    "foundry-up": "latest"
   }
 }

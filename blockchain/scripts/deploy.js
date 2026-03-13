@@ -1,18 +1,4 @@
-const hre = require(\"hardhat\");
+// DEPRECATED: Hardhat deploy script
+// Use Foundry: cd blockchain && forge script script/CertNFT.s.sol:DeployCertNFT --rpc-url $MUMBAI_RPC_URL --private-key $PRIVATE_KEY --broadcast
 
-async function main() {
-  const CertNFT = await hre.ethers.getContractFactory(\"CertNFT\");
-  const certNFT = await CertNFT.deploy(process.env.OWNER_ADDRESS || \"0xYourOwnerAddressHere\");
-
-  await certNFT.waitForDeployment();
-
-  console.log(\"CertNFT deployed to:\", await certNFT.getAddress());
-}
-
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
 
