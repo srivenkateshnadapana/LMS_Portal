@@ -3,14 +3,19 @@
 -- Enable RLS later for security
 CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\";
 
--- Users (Clerk syncs externally, this is shadow table)
+-- Users (Native auth: phone + password)
 CREATE TABLE users (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  clerk_id TEXT UNIQUE NOT NULL,
-  email TEXT UNIQUE NOT NULL,
+  phone VARCHAR(20) UNIQUE NOT NULL,  -- E.164 format e.g. +1234567890
+  email VARCHAR(255) UNIQUE,
+  password_hash TEXT NOT NULL,
   role TEXT CHECK (role IN ('student', 'instructor', 'admin')) DEFAULT 'student',
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
+
+-- Index for phone lookup
+CREATE INDEX idx_users_phone ON users(phone);
+
 
 -- Courses
 CREATE TABLE courses (

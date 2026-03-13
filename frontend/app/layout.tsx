@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
-import { ClerkProvider } from '@clerk/nextjs'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/Navbar'
+import { Providers } from '@/components/providers' 
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,14 +18,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className={inter.className}>
+<html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <Providers>
           <Navbar />
           <main className="container mx-auto p-8">{children}</main>
-        </body>
-      </html>
-    </ClerkProvider>
+        </Providers>
+      </body>
+    </html>
   )
 }
-
