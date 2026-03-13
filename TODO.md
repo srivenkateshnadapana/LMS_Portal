@@ -1,4 +1,4 @@
-# LMS Next-Gen Build TODO
+# IT LMS Build TODO
 Track progress on building the high-performance LMS monorepo.
 
 ## Phase 1: Monorepo Basics [COMPLETE]
