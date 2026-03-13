@@ -1,4 +1,4 @@
-# Next-Gen LMS Portal
+# IT LMS Portal
 
 High-performance, cloud-native LMS with Go/Rust/Next.js stack, Google Drive video proxy, blockchain certs, real-time labs.
 
