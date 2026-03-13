@@ -1,0 +1,16 @@
+{
+  \"name\": \"lms-blockchain\",
+  \"version\": \"1.0.0\",
+  \"description\": \"Soulbound NFT certs for LMS\",
+  \"scripts\": {
+    \"compile\": \"hardhat compile\",
+    \"deploy:mumbai\": \"hardhat run scripts/deploy.js --network mumbai\"
+  },
+  \"devDependencies\": {
+    \"@nomicfoundation/hardhat-toolbox\": \"^5.0.0\",
+    \"hardhat\": \"^2.22.2\"
+  },
+  \"dependencies\": {
+    \"@openzeppelin/contracts\": \"^5.0.0\"
+  }
+}

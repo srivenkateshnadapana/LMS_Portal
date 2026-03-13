@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+*.log
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Go
+backend-go/bin/
+backend-go/drive-service-account.json
+
+# Rust
+backend-rust/target/
+
+# Next.js
+frontend/.next/
+frontend/out/
+frontend/node_modules/
+
+# Blockchain
+blockchain/artifacts/
+blockchain/cache/
+
+# DB
+db/supabase.sql.backup
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/settings.json
+.idea/
+
